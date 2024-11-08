@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,133 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GWM-4Y-5Sd">
+                                <rect key="frame" x="0.0" y="62" width="440" height="860"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARf-Ko-MWL">
+                                        <rect key="frame" x="0.0" y="0.0" width="440" height="430"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which keyword is used to declare a constant in Swift?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlv-fm-WKj">
+                                                <rect key="frame" x="25.666666666666657" y="382.33333333333331" width="364.33333333333337" height="47.666666666666686"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwiftQuiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10p-a7-HIe">
+                                                <rect key="frame" x="146" y="50" width="148" height="35"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="35"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ULY-lI-geb">
+                                                <rect key="frame" x="50" y="213" width="340" height="4"/>
+                                            </progressView>
+                                        </subviews>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="10p-a7-HIe" firstAttribute="top" secondItem="ARf-Ko-MWL" secondAttribute="top" constant="50" id="GO0-XP-Zgn"/>
+                                            <constraint firstItem="ULY-lI-geb" firstAttribute="leading" secondItem="ARf-Ko-MWL" secondAttribute="leading" constant="50" id="OIX-g3-ZDk"/>
+                                            <constraint firstAttribute="bottom" secondItem="Qlv-fm-WKj" secondAttribute="bottom" id="YR2-fF-T67"/>
+                                            <constraint firstItem="10p-a7-HIe" firstAttribute="centerX" secondItem="ARf-Ko-MWL" secondAttribute="centerX" id="Zyw-m8-X8b"/>
+                                            <constraint firstItem="Qlv-fm-WKj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ARf-Ko-MWL" secondAttribute="leading" constant="20" symbolic="YES" id="cth-oP-CUy"/>
+                                            <constraint firstAttribute="trailing" secondItem="ULY-lI-geb" secondAttribute="trailing" constant="50" id="lHA-6o-pdJ"/>
+                                            <constraint firstItem="ULY-lI-geb" firstAttribute="centerY" secondItem="ARf-Ko-MWL" secondAttribute="centerY" id="lOI-13-6F7"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qlv-fm-WKj" secondAttribute="trailing" constant="50" id="loi-O4-dD6"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLZ-lj-iIC">
+                                        <rect key="frame" x="0.0" y="430" width="440" height="430"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTI-Wy-cg5">
+                                                <rect key="frame" x="50" y="140" width="340" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="hdY-Ji-bq6"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="One">
+                                                    <fontDescription key="titleFontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lqn-2h-bgv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbs-wI-bM2">
+                                                <rect key="frame" x="50" y="210" width="340" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="XCB-q9-bAr"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Two">
+                                                    <fontDescription key="titleFontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fRA-DT-EYC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0E-tr-dwP">
+                                                <rect key="frame" x="50" y="280" width="340" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="qhw-l6-1Xi"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Three">
+                                                    <fontDescription key="titleFontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bXt-JI-f8e"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Bbs-wI-bM2" firstAttribute="leading" secondItem="nLZ-lj-iIC" secondAttribute="leading" constant="50" id="L0D-85-DHb"/>
+                                            <constraint firstAttribute="trailing" secondItem="Bbs-wI-bM2" secondAttribute="trailing" constant="50" id="N0Q-DU-bRb"/>
+                                            <constraint firstItem="Bbs-wI-bM2" firstAttribute="top" secondItem="BTI-Wy-cg5" secondAttribute="bottom" constant="20" id="Tt5-FL-xa6"/>
+                                            <constraint firstItem="BTI-Wy-cg5" firstAttribute="leading" secondItem="nLZ-lj-iIC" secondAttribute="leading" constant="50" id="Zw3-8v-vRK"/>
+                                            <constraint firstAttribute="trailing" secondItem="y0E-tr-dwP" secondAttribute="trailing" constant="50" id="auU-Mp-Noc"/>
+                                            <constraint firstItem="y0E-tr-dwP" firstAttribute="top" secondItem="Bbs-wI-bM2" secondAttribute="bottom" constant="20" id="nuc-JK-Xci"/>
+                                            <constraint firstItem="y0E-tr-dwP" firstAttribute="leading" secondItem="nLZ-lj-iIC" secondAttribute="leading" constant="50" id="pfY-Kx-JDT"/>
+                                            <constraint firstAttribute="bottom" secondItem="y0E-tr-dwP" secondAttribute="bottom" constant="100" id="sDN-Bg-pXn"/>
+                                            <constraint firstAttribute="trailing" secondItem="BTI-Wy-cg5" secondAttribute="trailing" constant="50" id="zaz-hl-A8x"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ARf-Ko-MWL" secondAttribute="trailing" id="3ec-sw-27t"/>
+                                    <constraint firstItem="ARf-Ko-MWL" firstAttribute="leading" secondItem="GWM-4Y-5Sd" secondAttribute="leading" id="aHY-Kk-hAt"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.94217187170000005" green="0.31614300610000001" blue="0.21911963819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GWM-4Y-5Sd" secondAttribute="bottom" id="1Lx-7r-jdH"/>
+                            <constraint firstItem="GWM-4Y-5Sd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9C5-oG-acZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GWM-4Y-5Sd" secondAttribute="trailing" id="S0m-PX-fIJ"/>
+                            <constraint firstItem="GWM-4Y-5Sd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bkW-nt-cch"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonOne" destination="BTI-Wy-cg5" id="cMs-kF-f0B"/>
+                        <outlet property="buttonThree" destination="y0E-tr-dwP" id="W9n-XK-Ba2"/>
+                        <outlet property="buttonTwo" destination="Bbs-wI-bM2" id="NAM-gj-mF8"/>
+                        <outlet property="progressView" destination="ULY-lI-geb" id="d4K-Iz-dWW"/>
+                        <outlet property="questionLabel" destination="Qlv-fm-WKj" id="JKd-um-udE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.1679389312977" y="-2.1126760563380285"/>
         </scene>
     </scenes>
 </document>
