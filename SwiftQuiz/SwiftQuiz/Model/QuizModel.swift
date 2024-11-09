@@ -1,27 +1,13 @@
 //
-//  ViewController.swift
+//  QuizModel.swift
 //  SwiftQuiz
 //
-//  Created by Jhonata Jackson on 08/11/24.
+//  Created by Jhonata Jackson on 09/11/24.
 //
 
-import UIKit
+import Foundation
 
-struct Question {
-    let text: String
-    let answers: [String]
-    let correctAnswer: String
-}
-
-class ViewController: UIViewController {
-    
-    @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet weak var questionLabel: UILabel!
-    
-    @IBOutlet weak var buttonOne: UIButton!
-    @IBOutlet weak var buttonTwo: UIButton!
-    @IBOutlet weak var buttonThree: UIButton!
-    
+struct QuizModel {
     let questionList = [
         Question(
             text: "Which keyword is used to declare a constant in Swift?",
@@ -84,44 +70,21 @@ class ViewController: UIViewController {
         )
     ]
     
-    var currentQuestion = 0
+    private var currentQuestion = 0
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        buttonOne.layer.cornerRadius = 10
-        buttonTwo.layer.cornerRadius = 10
-        buttonThree.layer.cornerRadius = 10
-        progressView.progress = 0
-        progressView.transform = CGAffineTransform(scaleX: 1.0, y: 2.0) 
-        
-        self.updateUI()
-    }
-    
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        sender.alpha = 0.5
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            if(self.currentQuestion + 1 < self.questionList.count) {
-                self.currentQuestion += 1
-            } else {
-                self.currentQuestion = 0
-            }
-            sender.alpha = 1.0
-            self.updateUI()
+    mutating func nextQuestion() {
+        if(self.currentQuestion + 1 < self.questionList.count) {
+            self.currentQuestion += 1
+        } else {
+            self.currentQuestion = 0
         }
     }
     
-    func updateUI() {
-        self.questionLabel.text = self.questionList[self.currentQuestion].text
-        self.buttonOne.setTitle(self.questionList[self.currentQuestion].answers[0], for: .normal)
-        self.buttonTwo.setTitle(self.questionList[self.currentQuestion].answers[1], for: .normal)
-        self.buttonThree.setTitle(self.questionList[self.currentQuestion].answers[2], for: .normal)
-        
-        progressView.progress = 0.1 + Float(self.currentQuestion) / Float(self.questionList.count)
+    func getCurrentQuestion() -> Question {
+        return self.questionList[self.currentQuestion]
     }
     
-
+    func getProgess() -> Float {
+        return Float(self.currentQuestion) / Float(self.questionList.count)
+    }
 }
-
