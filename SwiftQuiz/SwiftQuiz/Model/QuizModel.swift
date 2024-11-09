@@ -70,21 +70,37 @@ struct QuizModel {
         )
     ]
     
-    private var currentQuestion = 0
+    var score = 0
+    var currentQuestionIndex = 0
+    
+    mutating func checkQuestion(_ answer: String) -> Bool {
+        if(answer == questionList[currentQuestionIndex].correctAnswer) {
+            score += 1
+            return true
+        } else {
+            if(score < 0) {
+                score -= 1
+            }
+            return false
+        }
+    }
     
     mutating func nextQuestion() {
-        if(self.currentQuestion + 1 < self.questionList.count) {
-            self.currentQuestion += 1
-        } else {
-            self.currentQuestion = 0
+        if(self.currentQuestionIndex < self.questionList.count) {
+            self.currentQuestionIndex += 1
         }
     }
     
     func getCurrentQuestion() -> Question {
-        return self.questionList[self.currentQuestion]
+        return self.questionList[self.currentQuestionIndex]
     }
     
     func getProgess() -> Float {
-        return Float(self.currentQuestion) / Float(self.questionList.count)
+        return Float(self.currentQuestionIndex) / Float(self.questionList.count)
+    }
+    
+    mutating func resetQuiz() {
+        self.score = 0
+        self.currentQuestionIndex = 0
     }
 }

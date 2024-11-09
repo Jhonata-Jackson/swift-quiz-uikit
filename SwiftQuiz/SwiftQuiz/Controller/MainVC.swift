@@ -26,18 +26,42 @@ class MainVC: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.quizModel.resetQuiz()
         self.setupView()
         self.updateUI()
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
-        sender.alpha = 0.5
+        let answer = sender.titleLabel?.text ?? ""
+        let isCorrectAnswer = self.quizModel.checkQuestion(answer)
+        let currentQuestionIndex = self.quizModel.currentQuestionIndex
+        let totalQuestions = self.quizModel.questionList.count
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            sender.alpha = 1.0
-            self.quizModel.nextQuestion()
-            self.updateUI()
+        if isCorrectAnswer {
+            sender.backgroundColor = .green
+        } else {
+            sender.alpha = 0.3
+            sender.backgroundColor = .red
+        }
+        
+        if(currentQuestionIndex == totalQuestions - 1) {
+            if let scoreVC = self.storyboard?.instantiateViewController(withIdentifier: "ScoreResultVC") as? ScoreResultVC {
+                self.navigationController?.setNavigationBarHidden(true, animated: false)
+                scoreVC.score = self.quizModel.score
+                sender.alpha = 1.0
+                self.navigationController?.pushViewController(scoreVC, animated: true)
+            }
+            
+            return
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                sender.alpha = 1.0
+                self.quizModel.nextQuestion()
+                self.updateUI()
+            }
         }
     }
     
@@ -47,7 +71,7 @@ class MainVC: UIViewController {
         buttonThree.layer.cornerRadius = 10
         buttonOne.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         buttonTwo.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-        buttonThree.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        buttonThree.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         progressView.progress = 0
         progressView.transform = CGAffineTransform(scaleX: 1.0, y: 2.0)
     }
@@ -59,9 +83,11 @@ class MainVC: UIViewController {
         self.buttonTwo.setTitle(currentQuestion.answers[1], for: .normal)
         self.buttonThree.setTitle(currentQuestion.answers[2], for: .normal)
         
-        let currentProgress = self.quizModel.getProgess()
+        self.buttonOne.backgroundColor = .white
+        self.buttonTwo.backgroundColor = .white
+        self.buttonThree.backgroundColor = .white
         
-        print(currentProgress)
+        let currentProgress = quizModel.getProgess()
         
         if(currentProgress == 0.0) {
             progressView.progress = 0
