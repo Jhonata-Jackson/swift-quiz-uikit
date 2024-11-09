@@ -5,33 +5,32 @@
 </h1>
 
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/jhonatajackson/SwiftQuiz">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/jhonatajackson/SwiftQuiz">
-  <img alt="Stars" src="https://img.shields.io/github/stars/jhonatajackson/SwiftQuiz">
-  <img alt="Repository Size" src="https://img.shields.io/github/repo-size/jhonatajackson/SwiftQuiz">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/jhonata-jackson/swift-quiz-uikit">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/jhonata-jackson/swift-quiz-uikit">
+  <img alt="Stars" src="https://img.shields.io/github/stars/jhonata-jackson/swift-quiz-uikit">
+  <img alt="Repository Size" src="https://img.shields.io/github/repo-size/jhonata-jackson/swift-quiz-uikit">
 </p>
 
 <p align="center">
-  <a href="#page_with_curl-sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#hammer-iniciando-ios">Tecnologias</a>
-  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#books-requisitos">Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-começando">Começando</a>&nbsp;&nbsp;&nbsp;
+  <a href="#page_with_curl-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#hammer-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#books-requirements">Requirements</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-getting-started">Getting Started</a>
 </p>
 
 <h1 align="center">
   <img alt="App Demo" src="./screenshots/swiftquiz.gif" width="400" />
 </h1>
 
-## 📃 Sobre
+## 📃 About
 
-**SwiftQuiz** é um aplicativo de quiz simples criado para estudo de desenvolvimento iOS com **UIKit** e **Storyboard**. O app permite ao usuário testar seus conhecimentos, respondendo a perguntas de múltiplas escolhas, e exibe a pontuação final no final do quiz.
+**SwiftQuiz** is a simple quiz app created as a study project for iOS development with **UIKit** and **Storyboard**. The app allows users to test their knowledge by answering multiple-choice questions and displays the final score at the end of the quiz.
 
-O objetivo deste projeto foi aprender e aprimorar habilidades no uso de **UIKit**, **navegação entre telas**, **controle de estado** e **interação com elementos de UI** em iOS.
+The objective of this project was to learn and improve skills in using **UIKit**, **screen navigation**, **state management**, and **UI element interaction** in iOS.
 
-## 🔨 Tecnologias
+## 🔨 Technologies
 
-Este projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed with the following technologies:
 
 - [UIKit](https://developer.apple.com/documentation/uikit/)
 - [Storyboard](https://developer.apple.com/xcode/storyboards/)
@@ -39,19 +38,19 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - [Xcode](https://developer.apple.com/xcode/)
 - [Git](https://git-scm.com/)
 
-## 📚 Requisitos
+## 📚 Requirements
 
-- Ter o **Xcode** instalado.
-- Um dispositivo ou simulador iOS.
+- Install **Xcode**.
+- Have an iOS device or simulator.
 
-## 🚀 Começando
+## 🚀 Getting Started
 
 ```bash
-  # Clonar o projeto:
-  $ git clone https://github.com/Jhonata-Jackson/swift-quiz-uikit
+  # Clone the project:
+  $ git clone https://github.com/jhonata-jackson/swift-quiz-uikit
 
-  # Abrir o projeto no Xcode:
+  # Open the project in Xcode:
   $ open SwiftQuiz.xcodeproj
 ```
 
-Feito por Jhonata Jackson 👋🏻 [Get in touch!](https://www.linkedin.com/in/jhonata-jackson-555929121/)
+Made by Jhonata Jackson 👋🏻 [Get in touch!](https://www.linkedin.com/in/jhonata-jackson-555929121/)
