@@ -36,6 +36,7 @@ This project was developed with the following technologies:
 - [Storyboard](https://developer.apple.com/xcode/storyboards/)
 - [Swift](https://developer.apple.com/swift/)
 - [Xcode](https://developer.apple.com/xcode/)
+- [MVC - Pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
 - [Git](https://git-scm.com/)
 
 ## 📚 Requirements
